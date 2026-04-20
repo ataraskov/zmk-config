@@ -86,14 +86,14 @@
         tri_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│  F1      │  F2      │  F3      │  F4      │  F5      │   │PROFILE 0 │PROFILE 1 │PROFILE 2 │PROFILE 3 │  RESET   │
+            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //│  F6      │  F7      │  F8      │  F9      │  F10     │   │ VOL UP   │ VOL DN   │  MUTE    │  BT CLR  │BOOTLOADER│
+            &kp F6     &kp F7     &kp F8     &kp F9     &kp F10      &kp C_VOL_UP &kp C_VOL_DN &kp C_MUTE &bt BT_CLR &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &studio_unlock
+        //│  F11     │  F12     │          │          │          │   │  PREV    │  PLAY    │  NEXT    │          │ STUDIO   │
+            &kp F11    &kp F12    &trans     &trans     &trans         &kp C_PREV &kp C_PP   &kp C_NEXT &trans     &studio_unlock
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
